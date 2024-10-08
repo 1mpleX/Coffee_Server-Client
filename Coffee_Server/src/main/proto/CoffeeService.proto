@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.coffee.CoffeeApplication;
+
+message CoffeeRequest {
+  string country = 1;
+  repeated string sort = 2;
+}
+
+message CoffeeResponse {
+  string greeting = 1;
+}
+
+service GreetingService{
+  rpc greeting(CoffeeRequest) returns (CoffeeResponse);
+}
